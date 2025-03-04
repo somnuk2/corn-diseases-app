@@ -23,7 +23,7 @@
               style="width: 100%; max-height: 300px;" />
             {{ result_files }}
           </div>
-          <div class="q-pa-md" style="max-width: 350px">
+          <div class="q-pa-md">
             <q-list>
               <q-item>
                 <q-item-section>
@@ -90,54 +90,55 @@ export default {
     // Function to check the disease prediction
     const checkDiseasePrediction = (predictedLabel) => {
       // Check each disease with an if statement
-      if (predictedLabel === 'CDM') {
+
+      if (predictedLabel == 'CDM') {
         console.log('Prediction: Corn Disease - CDM');
-        Caused_by = "เชื้อราในดิน เช่น Fusarium หรือ Pythium";
-        Symptoms = "มักจะพบในต้นกล้าข้าวโพดที่ยังอ่อนอยู่ โดยต้นกล้าจะตาย หรือใบเหลืองและมีอาการเน่าในส่วนของลำต้นหรือราก";
-        Impact = "โรคนี้ทำให้เกิดการงอกของเมล็ดที่ไม่สมบูรณ์หรือมีอัตราการงอกต่ำ จึงส่งผลให้จำนวนต้นข้าวโพดลดลง";
-        Management = "การหมุนเวียนพืช การใช้สารเคมีป้องกันเชื้อราในการรักษาเมล็ดพันธุ์ และการระบายน้ำที่ดีในดิน";
+        Caused_by.value = "เชื้อราในดิน เช่น Fusarium หรือ Pythium";
+        Symptoms.value = "มักจะพบในต้นกล้าข้าวโพดที่ยังอ่อนอยู่ โดยต้นกล้าจะตาย หรือใบเหลืองและมีอาการเน่าในส่วนของลำต้นหรือราก";
+        Impact.value = "โรคนี้ทำให้เกิดการงอกของเมล็ดที่ไม่สมบูรณ์หรือมีอัตราการงอกต่ำ จึงส่งผลให้จำนวนต้นข้าวโพดลดลง";
+        Management.value = "การหมุนเวียนพืช การใช้สารเคมีป้องกันเชื้อราในการรักษาเมล็ดพันธุ์ และการระบายน้ำที่ดีในดิน";
         return 'CDM (Corn Damping-Off Disease)';
-      } else if (predictedLabel === 'HT') {
+      } else if (predictedLabel == 'HT') {
         console.log('Prediction: Corn Disease - HT');
-        Caused_by = "การถูกทำลายโดยลูกเห็บจากพายุ";
-        Symptoms = "ใบข้าวโพดจะมีรอยขาดหรือถูกฉีกขาดจากแรงกระแทกของลูกเห็บ หากเกิดความเสียหายรุนแรง อาจทำให้ลำต้นหรือฝักข้าวโพดถูกทำลาย";
-        Impact = "ความเสียหายจากลูกเห็บไม่ได้เกิดจากเชื้อโรค แต่จะทำให้ต้นข้าวโพดอ่อนแอต่อการติดเชื้อรอง และลดผลผลิต";
-        Management = "ไม่สามารถป้องกันความเสียหายจากลูกเห็บได้ แต่การจัดการฟิลด์อย่างเหมาะสม เช่น การเก็บเกี่ยวในเวลาที่เหมาะสม จะช่วยลดผลกระทบได้";
+        Caused_by.value = "การถูกทำลายโดยลูกเห็บจากพายุ";
+        Symptoms.value = "ใบข้าวโพดจะมีรอยขาดหรือถูกฉีกขาดจากแรงกระแทกของลูกเห็บ หากเกิดความเสียหายรุนแรง อาจทำให้ลำต้นหรือฝักข้าวโพดถูกทำลาย";
+        Impact.value = "ความเสียหายจากลูกเห็บไม่ได้เกิดจากเชื้อโรค แต่จะทำให้ต้นข้าวโพดอ่อนแอต่อการติดเชื้อรอง และลดผลผลิต";
+        Management.value = "ไม่สามารถป้องกันความเสียหายจากลูกเห็บได้ แต่การจัดการฟิลด์อย่างเหมาะสม เช่น การเก็บเกี่ยวในเวลาที่เหมาะสม จะช่วยลดผลกระทบได้";
         return 'HT (Hail Damage)';
-      } else if (predictedLabel === 'MDMV') {
+      } else if (predictedLabel == 'MDMV') {
         console.log('Prediction: Corn Disease - MDMV');
-        Caused_by = "ไวรัสมอซาย์ข้าวโพดมิสซูรี่ (MDMV) ที่ถูกส่งผ่านโดยเพลี้ย";
-        Symptoms = "จะทำให้ใบข้าวโพดมีลายเส้นเหลืองหรือเขียวในลักษณะมอซาอิก โดยต้นข้าวโพดอาจเติบโตช้าและพัฒนาฝักไม่สมบูรณ์";
-        Impact = "การติดเชื้อ MDMV อาจทำให้ผลผลิตลดลงโดยเฉพาะถ้าต้นข้าวโพดติดเชื้อในช่วงต้นของการเจริญเติบโต";
-        Management = "ควบคุมเพลี้ยด้วยการใช้ยาฆ่าแมลง หรือการใช้พันธุ์ข้าวโพดที่ทนทานต่อโรค";
+        Caused_by.value = "ไวรัสมอซาย์ข้าวโพดมิสซูรี่ (MDMV) ที่ถูกส่งผ่านโดยเพลี้ย";
+        Symptoms.value = "จะทำให้ใบข้าวโพดมีลายเส้นเหลืองหรือเขียวในลักษณะมอซาอิก โดยต้นข้าวโพดอาจเติบโตช้าและพัฒนาฝักไม่สมบูรณ์";
+        Impact.value = "การติดเชื้อ MDMV อาจทำให้ผลผลิตลดลงโดยเฉพาะถ้าต้นข้าวโพดติดเชื้อในช่วงต้นของการเจริญเติบโต";
+        Management.value = "ควบคุมเพลี้ยด้วยการใช้ยาฆ่าแมลง หรือการใช้พันธุ์ข้าวโพดที่ทนทานต่อโรค";
         return 'MDMV (Maize Dwarf Mosaic Virus)';
-      } else if (predictedLabel === 'NCLB') {
+      } else if (predictedLabel == 'NCLB') {
         console.log('Prediction: Corn Disease - NCLB');
-        Caused_by = "เชื้อราที่ชื่อ Exserohilum turcicum";
-        Symptoms = "ใบข้าวโพดจะมีรอยไหม้ยาวและเป็นสีเทา-เขียว ซึ่งจะเริ่มจากจุดเล็กๆ แล้วขยายใหญ่ขึ้น";
-        Impact = "โรคนี้จะทำให้พื้นที่การสังเคราะห์แสงของใบลดลงและผลผลิตลดลง ถ้าเกิดการติดเชื้ออย่างรุนแรง";
-        Management = "การใช้พันธุ์ข้าวโพดที่ทนทาน การฉีดพ่นยาฆ่าเชื้อรา และการหมุนเวียนพืชสามารถช่วยในการควบคุมโรคนี้";
+        Caused_by.value = "เชื้อราที่ชื่อ Exserohilum turcicum";
+        Symptoms.value = "ใบข้าวโพดจะมีรอยไหม้ยาวและเป็นสีเทา-เขียว ซึ่งจะเริ่มจากจุดเล็กๆ แล้วขยายใหญ่ขึ้น";
+        Impact.value = "โรคนี้จะทำให้พื้นที่การสังเคราะห์แสงของใบลดลงและผลผลิตลดลง ถ้าเกิดการติดเชื้ออย่างรุนแรง";
+        Management.value = "การใช้พันธุ์ข้าวโพดที่ทนทาน การฉีดพ่นยาฆ่าเชื้อรา และการหมุนเวียนพืชสามารถช่วยในการควบคุมโรคนี้";
         return 'NCLB (Northern Corn Leaf Blight)';
-      } else if (predictedLabel === 'SCLB') {
+      } else if (predictedLabel == 'SCLB') {
         console.log('Prediction: Corn Disease - SCLB');
-        Caused_by = "เชื้อรา Cochliobolus heterostrophus";
-        Symptoms = "ทำให้ใบข้าวโพดมีรอยไหม้ที่ขอบใบ ซึ่งจะมีสีน้ำตาลถึงสีเทาและมีขอบสีเหลือง";
-        Impact = "โรคนี้สามารถลดผลผลิตได้อย่างมากถ้าเกิดขึ้นในช่วงต้นฤดูกาลที่อากาศร้อนและมีความชื้น";
-        Management = "การใช้พันธุ์ข้าวโพดที่ทนทาน การพ่นยาฆ่าเชื้อรา และการหมุนเวียนพืช";
+        Caused_by.value = "เชื้อรา Cochliobolus heterostrophus";
+        Symptoms.value = "ทำให้ใบข้าวโพดมีรอยไหม้ที่ขอบใบ ซึ่งจะมีสีน้ำตาลถึงสีเทาและมีขอบสีเหลือง";
+        Impact.value = "โรคนี้สามารถลดผลผลิตได้อย่างมากถ้าเกิดขึ้นในช่วงต้นฤดูกาลที่อากาศร้อนและมีความชื้น";
+        Management.value = "การใช้พันธุ์ข้าวโพดที่ทนทาน การพ่นยาฆ่าเชื้อรา และการหมุนเวียนพืช";
         return 'SCLB (Southern Corn Leaf Blight)';
-      } else if (predictedLabel === 'SCMV') {
+      } else if (predictedLabel == 'SCMV') {
         console.log('Prediction: Corn Disease - SCMV');
-        Caused_by = "ไวรัสมอซาย์อ้อย (SCMV) ที่ถูกส่งผ่านโดยเพลี้ย";
-        Symptoms = "จะทำให้ใบข้าวโพดมีลายเส้นหรือมอซาอิกที่เป็นสีเหลืองและขอบใบที่ตาย เนื่องจากการติดเชื้อ";
-        Impact = "SCMV สามารถลดผลผลิตและทำให้ข้าวโพดมีคุณภาพต่ำได้";
-        Management = "การควบคุมเพลี้ยและการใช้พันธุ์ข้าวโพดที่ทนทานเป็นวิธีการควบคุมโรคนี้";
+        Caused_by.value = "ไวรัสมอซาย์อ้อย (SCMV) ที่ถูกส่งผ่านโดยเพลี้ย";
+        Symptoms.value = "จะทำให้ใบข้าวโพดมีลายเส้นหรือมอซาอิกที่เป็นสีเหลืองและขอบใบที่ตาย เนื่องจากการติดเชื้อ";
+        Impact.value = "SCMV สามารถลดผลผลิตและทำให้ข้าวโพดมีคุณภาพต่ำได้";
+        Management.value = "การควบคุมเพลี้ยและการใช้พันธุ์ข้าวโพดที่ทนทานเป็นวิธีการควบคุมโรคนี้";
         return 'SCMV (Sugarcane Mosaic Virus)';
-      } else if (predictedLabel === 'SR') {
+      } else if (predictedLabel == 'SR') {
         console.log('Prediction: Corn Disease - SR');
-        Caused_by = "เชื้อแบคทีเรีย Pantoea stewartii";
-        Symptoms = "ทำให้ใบข้าวโพดมีรอยเส้นสีเหลืองหรือสีน้ำตาลตามแนวเส้นกลางใบ โดยบางครั้งก็ทำให้ต้นข้าวโพดเติบโตช้าและฝักไม่สมบูรณ์";
-        Impact = "โรคนี้สามารถลดผลผลิตได้อย่างมากถ้าต้นข้าวโพดติดเชื้อในช่วงเริ่มต้นของการเจริญเติบโต";
-        Management = "โรคนี้แพร่กระจายผ่านเพลี้ยข้าวโพด ดังนั้นการควบคุมเพลี้ยและการใช้พันธุ์ข้าวโพดที่ทนทานจะช่วยลดความเสียหายจากโรคนี้ได้";
+        Caused_by.value = "เชื้อแบคทีเรีย Pantoea stewartii";
+        Symptoms.value = "ทำให้ใบข้าวโพดมีรอยเส้นสีเหลืองหรือสีน้ำตาลตามแนวเส้นกลางใบ โดยบางครั้งก็ทำให้ต้นข้าวโพดเติบโตช้าและฝักไม่สมบูรณ์";
+        Impact.value = "โรคนี้สามารถลดผลผลิตได้อย่างมากถ้าต้นข้าวโพดติดเชื้อในช่วงเริ่มต้นของการเจริญเติบโต";
+        Management.value = "โรคนี้แพร่กระจายผ่านเพลี้ยข้าวโพด ดังนั้นการควบคุมเพลี้ยและการใช้พันธุ์ข้าวโพดที่ทนทานจะช่วยลดความเสียหายจากโรคนี้ได้";
         return "SR (Stewart's Wilt)";
       } else {
         // If the prediction doesn't match any known diseases, log an error
@@ -164,7 +165,8 @@ export default {
         // Retry logic for uploading the image
         const response = await makeRequestWithRetry(formData);
         if (response) {
-          result_files.value = checkDiseasePrediction(response.data);
+          console.log(`Prediction_2: ${response}`);  
+          result_files.value = checkDiseasePrediction(response);
           console.log('Response from server:', response.data);
         } else {
           console.error('Failed to upload image after multiple attempts');
@@ -188,7 +190,7 @@ export default {
             // Check if the predicted label is one of the 7 diseases in the class_names array
             if (class_names.includes(predictedLabel)) {
               // If it matches a disease in the list, log and return the prediction
-              console.log(`Prediction: ${predictedLabel}`);
+              console.log(`Prediction_1: ${predictedLabel}`);
               return predictedLabel;
             } else {
               // If the prediction doesn't match any disease, log an error
